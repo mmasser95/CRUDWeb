@@ -1,7 +1,7 @@
 <?php
 $dbc=mysqli_connect("localhost", "root", "root", "proveedores");
-$campo1=$_GET['campo1'];
-$tabla=$_GET['tabla'];
+$campo1=$_REQUEST['campo1'];
+$tabla=$_REQUEST['tabla'];
 switch ($tabla){
     case 'vendedor':
         $ncampo="numvend";
