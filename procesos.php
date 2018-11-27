@@ -10,7 +10,7 @@ if($btn=='Actualizar'){
     $campoa2=$_POST['campo2'];
 }
 
-$dbc=mysqli_connect("localhost", "root", "root", "proveedores");
+
 switch ($tabla){
     case 'vendedor':
         $campo1='numvend';
@@ -62,10 +62,7 @@ switch ($tabla){
                             echo "<a href='escoge.php' class='btn btn-outline-warning'>Escoge</a>";
                             break;
                         case 'Insertar':
-                            $sql = "INSERT INTO $tabla (`$campo1`, `$campo2`) VALUES ($campoi1, '$campoi2')";
-                            $res = mysqli_query($dbc, $sql) or die("<div class='alert alert-danger text-center' role='alert'>Se ha añadido el registro $campoi1, $campoi2 incorrectamente $sql</div>");
-                            echo "<div class='alert alert-success text-center' role='alert'>Se ha añadido el registro $campoi1, $campoi2 correctamente</div>";
-                            echo "<a href='procesos.php?tabla=$tabla&btn=Ver' class='btn btn-outline-primary'>Back</a>";
+
                             break;
                         case 'Actualizar':
                             $sql = "UPDATE $tabla SET $campo2='$campoa2' WHERE $campo1=$campoa1;";

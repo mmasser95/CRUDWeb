@@ -10,6 +10,7 @@ $campo2=$_GET['campo2'];
     <title>Insertar</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+
 </head>
 <body>
     <div class="container-fluid">
@@ -19,7 +20,7 @@ $campo2=$_GET['campo2'];
         <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm">
-                <form action="procesos.php" method="post">
+                <form action="procesos.php" method="post" onsubmit="validar(this)">
                     <div class="form-group">
                         <label for="campo1"><?php echo $campo1; ?></label>
                         <input type="text" name="campo1" id="campo1" class="form-control">
@@ -35,5 +36,6 @@ $campo2=$_GET['campo2'];
             <div class="col-sm-4"></div>
         </div>
     </div>
+    <script src="js/validar.js"></script>
 </body>
 </html>
