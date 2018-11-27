@@ -1,6 +1,5 @@
 <?php
-include 'conexion.php';
-$dbc=conectar();
+$dbc=mysqli_connect("localhost", "root", "root", "proveedores");
 $campo1=$_GET['campo1'];
 $tabla=$_GET['tabla'];
 switch ($tabla){

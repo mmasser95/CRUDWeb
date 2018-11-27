@@ -1,6 +1,5 @@
 <?php
-include "conexion.php";
-$dbc=conectar();
+$dbc=mysqli_connect("localhost", "root", "root", "proveedores");
 $tabla=$_GET['tabla'];
 $campo1=$_GET['campo1'];
 switch ($tabla){
@@ -31,7 +30,7 @@ switch ($tabla){
             <div class="col-sm-3"></div>
             <div class="col-sm">
                 <?php
-                    echo $sql;
+                    $sql = "SELECT $ncampo1, $ncampo2, $ncampo3 FROM $tabla where $ncampo1=$campo1;"
                     $html = "<table class='table table-striped'><tr><th>$ncampo1</th><th>$ncampo2</th><th>$ncampo3</th></tr>";
                     $res = mysqli_query($dbc,$sql);
                     $row = mysqli_fetch_row($res);

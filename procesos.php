@@ -10,8 +10,7 @@ if($btn=='Actualizar'){
     $campoa2=$_POST['campo2'];
 }
 
-include "conexion.php";
-$dbc=conectar();
+$dbc=mysqli_connect("localhost", "root", "root", "proveedores");
 switch ($tabla){
     case 'vendedor':
         $campo1='numvend';

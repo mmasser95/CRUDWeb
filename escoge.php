@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +10,7 @@ session_start();
     <div class="container-fluid">
         <div class="jumbotron">
             <h1 class="text-center">CRUD WEB</h1>
-            <h3 class="text-center text-secondary">Escoge una tabla de la base de datos <?php echo $_SESSION['bbdd'];?></h3>
+            <h3 class="text-center text-secondary">Escoge una tabla de la base de datos proveedores</h3>
         </div>
         <div class="row">
             <div class="col-sm-4"></div>
