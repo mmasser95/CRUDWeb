@@ -2,10 +2,10 @@
 $campo1=$_REQUEST['numpieza'];
 $campo2=$_REQUEST['nompieza'];
 $dbc=mysqli_connect("localhost", "root", "root", "proveedores");
-$sql = "UPDATE $tabla SET $campo2='$campoa2' WHERE $campo1=$campoa1;";
-$res = mysqli_query($dbc, $sql) or die("<div class='alert alert-danger text-center' role='alert'>Se ha actualizado el registro $campoa1, $campoa2 incorrectamente $sql</div>");
-echo "<div class='alert alert-success text-center' role='alert'>Se ha actualizado el registro $campoa1, $campoa2 correctamente</div>";
-echo "<a href='procesos.php?tabla=$tabla&btn=Ver' class='btn btn-outline-primary'>Back</a>";
+$sql = "UPDATE pieza SET nompieza='$campo2' WHERE numpieza=$campo1;";
+$res = mysqli_query($dbc, $sql) or die("<div class='alert alert-danger text-center' role='alert'>Error query</div>");
+echo "<div class='alert alert-success text-center' role='alert'>Se ha actualizado el registro $campo1, $campo2 correctamente</div>";
+echo "<a href='procesos.php?tabla=pieza&btn=Ver' class='btn btn-outline-primary'>Back</a>";
 }
 ?>
 <html>
