@@ -1,8 +1,10 @@
 <?php
+$campo1=$_REQUEST['campo1'];
+$campo2=$_REQUEST['campo2'];
 if (isset($_REQUEST['btn'])) {
   $dbc=mysqli_connect("localhost", "root", "root", "proveedores");
   $sql = "INSERT INTO vendedor (`numvend`, `nomvend`, nombrecomer) VALUES ($campo1, '$campo2')";
-  $res = mysqli_query($dbc, $sql) or die("<div class='alert alert-danger text-center' role='alert'>Error query/div>");
+  $res = mysqli_query($dbc, $sql) or die("<div class='alert alert-danger text-center' role='alert'>Error query</div>");
   echo "<div class='alert alert-success text-center' role='alert'>Se ha añadido el registro $campo1, $campo2 correctamente</div>";
   echo "<a href='procesos.php?tabla=vendedor&btn=Ver' class='btn btn-outline-primary'>Back</a>";
 }
@@ -26,14 +28,13 @@ if (isset($_REQUEST['btn'])) {
             <div class="col-sm">
                 <form action="<?php $_SERVER['PHP_SELF'];?>" method="post" onsubmit="validar(this)">
                     <div class="form-group">
-                        <label for="campo1"><?php echo $campo1; ?></label>
+                        <label for="campo1">Numvend</label>
                         <input type="text" name="campo1" id="campo1" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="campo2"><?php echo $campo2;?></label>
+                        <label for="campo2">Nomvend</label>
                         <input type="text" name="campo2" id="campo2" class="form-control">
                     </div>
-                    <input name="tabla" type="hidden" value="<?php echo $tabla;?>">
                     <input name="btn" type="submit" value="Insertar" class="btn btn-outline-success">
                 </form>
             </div>

@@ -1,7 +1,8 @@
 <?php
+$campo1=$_REQUEST['campo1'];
+$campo2=$_REQUEST['campo2'];
 if (isset($_REQUEST['btn'])) {
-  $campo1=$_REQUEST['numpieza'];
-  $campo2=$_REQUEST['nompieza'];
+
   $dbc=mysqli_connect("localhost", "root", "root", "proveedores");
   $sql = "UPDATE pieza SET nompieza='$campo2' WHERE numpieza=$campo1;";
   $res = mysqli_query($dbc, $sql) or die("<div class='alert alert-danger text-center' role='alert'>Error query</div>");
@@ -26,7 +27,7 @@ if (isset($_REQUEST['btn'])) {
                 <div class="col-sm">
                     <form action="<?php $_SERVER['PHP_SELF'];?>" method="post">
                         <div class="form-group">
-                            <label for="campo2">Numpieza</label>
+                            <label for="campo2">Nompieza</label>
                             <input type="text" id="campo2" name="campo2" value="<?php echo $campo2;?>" class="form-control">
                         </div>
                         <input type="hidden" value="<?php echo $campo1;?>" name="campo1">

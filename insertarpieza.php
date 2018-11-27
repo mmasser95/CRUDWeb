@@ -1,4 +1,6 @@
 <?php
+$campo1=$_REQUEST['campo1'];
+$campo2=$_REQUEST['campo2'];
 if (isset($_REQUEST['btn'])) {
   $dbc=mysqli_connect("localhost", "root", "root", "proveedores");
   $sql = "INSERT INTO pieza (`numpieza`, `nompieza`) VALUES ($campo1, '$campo2')";
@@ -30,7 +32,7 @@ if (isset($_REQUEST['btn'])) {
                         <input type="text" name="campo1" id="campo1" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="campo2"Nompieza</label>
+                        <label for="campo2">Nompieza</label>
                         <input type="text" name="campo2" id="campo2" class="form-control">
                     </div>
                     <input name="btn" type="submit" value="Insertar" class="btn btn-outline-success">

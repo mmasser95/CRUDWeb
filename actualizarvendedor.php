@@ -1,8 +1,7 @@
 <?php
+$campo1=$_REQUEST['numvend'];
+$campo2=$_REQUEST['nomvend'];
 if (isset($_REQUEST['btn'])){
-  $campo1=$_REQUEST['numvend'];
-  $campo2=$_REQUEST['nomvend'];
-
   $dbc=mysqli_connect("localhost", "root", "root", "proveedores");
   $sql = "UPDATE vendedor SET nomvend='$campo2' WHERE numvend=$campo1;";
   $res = mysqli_query($dbc, $sql) or die("<div class='alert alert-danger text-center' role='alert'>Se ha actualizado el registro $campoa1, $campoa2 incorrectamente $sql</div>");
