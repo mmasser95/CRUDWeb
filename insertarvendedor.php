@@ -1,9 +1,11 @@
 <?php
-$dbc=mysqli_connect("localhost", "root", "root", "proveedores");
-$sql = "INSERT INTO vendedor (`numvend`, `nomvend`, nombrecomer) VALUES ($campo1, '$campo2')";
-$res = mysqli_query($dbc, $sql) or die("<div class='alert alert-danger text-center' role='alert'>Error query/div>");
-echo "<div class='alert alert-success text-center' role='alert'>Se ha añadido el registro $campo1, $campo2 correctamente</div>";
-echo "<a href='procesos.php?tabla=vendedor&btn=Ver' class='btn btn-outline-primary'>Back</a>";
+if (isset($_REQUEST['btn'])) {
+  $dbc=mysqli_connect("localhost", "root", "root", "proveedores");
+  $sql = "INSERT INTO vendedor (`numvend`, `nomvend`, nombrecomer) VALUES ($campo1, '$campo2')";
+  $res = mysqli_query($dbc, $sql) or die("<div class='alert alert-danger text-center' role='alert'>Error query/div>");
+  echo "<div class='alert alert-success text-center' role='alert'>Se ha añadido el registro $campo1, $campo2 correctamente</div>";
+  echo "<a href='procesos.php?tabla=vendedor&btn=Ver' class='btn btn-outline-primary'>Back</a>";
+}
 ?>
 
 <html>
@@ -17,7 +19,7 @@ echo "<a href='procesos.php?tabla=vendedor&btn=Ver' class='btn btn-outline-prima
 <body>
     <div class="container-fluid">
         <div class="jumbotron">
-            <h1>Insertar en la tabla <?php echo $tabla;?></h1>
+            <h1>Insertar en la tabla vendedor</h1>
         </div>
         <div class="row">
             <div class="col-sm-4"></div>

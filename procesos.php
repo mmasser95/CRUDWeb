@@ -36,7 +36,7 @@ switch ($tabla){
             <div class="jumbotron">
                 <h1 class="text-center">Resultados de la tabla <?php echo $tabla;?></h1>
                 <?php
-                    echo "<a href='insertar.php?tabla=$tabla&campo1=$campo1&campo2=$campo2' class='btn btn-success'>Insertar</a>";
+                    echo "<a href='insertar$tabla.php' class='btn btn-success'>Insertar</a>";
                 ?>
             </div>
             <div class="row">
@@ -52,7 +52,7 @@ switch ($tabla){
                                 $html .= "<tr><td>$row[$campo1]</td>";
                                 $html .= "<td>$row[$campo2]</td>";
                                 $html .= "<td><a href='ver.php?campo1=$row[$campo1]&tabla=$tabla' class='fas fa-eye text-success'> </a> ";
-                                $html .= "<a href='actualizar.php?$campo1=$row[$campo1]&$campo2=$row[$campo2]&tabla=$tabla' class='fas fa-marker text-warning'> </a> ";
+                                $html .= "<a href='actualizar$tabla.php?$campo1=$row[$campo1]&$campo2=$row[$campo2]' class='fas fa-marker text-warning'> </a> ";
                                 $html .= "<a href='borrar.php?campo1=$row[$campo1]&tabla=$tabla' class='fas fa-trash text-danger'> </a> ";
                                 $html .= "</td></tr>";
                             }
@@ -60,11 +60,6 @@ switch ($tabla){
                             echo $html;
                             echo "<a href='escoge.php' class='btn btn-outline-warning'>Escoge</a>";
                             break;
-                        case 'Insertar':
-
-                            break;
-                        case 'Actualizar':
-                            
                     }
                     ?>
                 </div>
